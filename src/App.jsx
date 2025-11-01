@@ -27,7 +27,7 @@ export default function App() {
             <section id="skills"><Skills /></section>
             <section id="projects"><Projects /></section>
             <section id="contact"><Contact /></section>
-            <section id="Footer"><Footer /></section>
+            {/* <section id="Footer"><Footer /></section> */}
           </div>
         </Router>
       )}

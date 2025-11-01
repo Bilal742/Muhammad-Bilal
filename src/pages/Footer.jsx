@@ -21,7 +21,7 @@ export default function Footer() {
 
         {/* Right - Social Icons */}
         <div className="flex space-x-5 text-lg">
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
+          <a href="https://github.com/Bilal742" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
             <FaGithub />
           </a>
           <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">

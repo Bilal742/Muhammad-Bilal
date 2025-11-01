@@ -1,113 +1,113 @@
 // src/pages/Projects.jsx
-import { useState } from "react";
 import { motion } from "framer-motion";
 import bg from "../assets/bg1.jpg";
 import bg2 from "../assets/bg2.png";
+import bg3 from "../assets/bg3.png";
+import bg4 from "../assets/bg4.png";
 
 export default function Projects() {
   const allProjects = [
     {
       id: 1,
-      title: "Smart Power Solution (Practice Project)",
+      title: "Smart Power Solution",
+      description:
+        "A responsive website for Smart Power Solution built using HTML, CSS, JavaScript, and Tailwind CSS with smooth animations.",
       img: bg,
-      link: "https://alive-calendar.surge.sh/",
-      category: "Websites",
+      liveLink: "https://smart-power-solution.netlify.app/",
+      sourceCode:
+        "https://github.com/Bilal742/Smart-Power-Solution-SPS-website",
     },
     {
       id: 2,
-      title: "Villa (Practice Project)",
+      title: "Villa-Website",
+      description:
+        "A modern and fully responsive Villa Booking website built with React, Tailwind CSS, and JavaScript — allowing users to explore, view details, and seamlessly book luxury villas.",
       img: bg2,
-      link: "https://jaded-example.surge.sh/",
-      category: "Websites",
+      liveLink: "https://luxurymansions.netlify.app/",
+      sourceCode: "https://github.com/Bilal742/Villa-Website",
+    },
+    {
+      id: 3,
+      title: "React User Management CRUD",
+      description:
+        "A fully functional React User Management CRUD Application built using React.js and Axios with live API integration from MockAPI.io. Users can create, read, update, and delete records dynamically. The app uses Material UI (MUI) for a clean and responsive interface and React Router for page navigation.",
+      img: bg3,
+      liveLink: "https://user-managments.netlify.app/",
+      sourceCode: "https://github.com/Bilal742/react-user-management-crud",
     },
     {
       id: 4,
-      title: "Learning Projects Portfolio",
-      img: bg2,
-      link: "https://quiz-app.surge.sh/",
-      category: "Quiz",
+      title: "Learning Projects",
+      description:
+        "This section highlights my practical learning journey through real-world HTML, CSS, and JavaScript projects. Each project strengthens my understanding of responsive layouts and dynamic UI design — every project reflects continuous learning and growth as a web developer.",
+      img: bg4,
+      liveLink: "https://learning-projectss.netlify.app/",
+      sourceCode: "https://github.com/Bilal742/react-user-management-crud",
     },
   ];
 
-  const [selectedCategory, setSelectedCategory] = useState("All");
-
-  const filteredProjects =
-    selectedCategory === "All"
-      ? allProjects
-      : allProjects.filter((p) => p.category === selectedCategory);
-
   return (
-    <section id="projects" className="py-16 text-white">
-      <div className="max-w-6xl mx-auto px-6 lg:px-12">
+    <section id="projects" className="py-16 text-white bg-[#1F232D]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Heading */}
-        <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="text-3xl sm:text-4xl font-bold text-center mb-12 uppercase"
-        >
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 uppercase">
           My <span className="text-[#00EEFF]">Projects</span>
-        </motion.h2>
+        </h2>
 
-        {/* Category Buttons */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="flex justify-center gap-4 mb-12 flex-wrap"
-        >
-          {["Websites", "Learning Projects Portfolio"].map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-6 py-2 cursor-pointer rounded-lg border font-bold transition duration-300 ${selectedCategory === cat
-                  ? "bg-[#00EEFF] text-black border-[#00EEFF]"
-                  : "bg-[#1F232D] text-[#00cddb] border-cyan-400 hover:shadow-[0_0_15px_#00cddb]"
-                }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </motion.div>
-
-        {/* Projects Grid */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full"
-        >
-          {filteredProjects.map((project) => (
-            <motion.div
+        {/* Project Cards */}
+        <div className="flex flex-col gap-12">
+          {allProjects.map((project, index) => (
+            <div
               key={project.id}
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 200 }}
-              className="bg-[#1F232D] rounded-xl overflow-hidden shadow-lg shadow-[#00EEFF]/20 hover:shadow-[#00EEFF]/40 transition-all duration-300"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: index * 0.2 }}
+              className={`flex flex-col lg:flex-row items-center bg-[#1F232D] rounded-xl overflow-hidden shadow-lg shadow-[#00EEFF]/20 hover:shadow-[#00EEFF]/40 transition-all duration-300 ${
+                index % 2 !== 0 ? "lg:flex-row-reverse" : ""
+              }`}
             >
-              <img
-                src={project.img}
-                alt={project.title}
-                className="w-full h-56 object-cover brightness-90"
-              />
-              <div className="py-8 text-center">
-                <h3 className="text-base sm:text-lg font-semibold mb-4">
-                  {project.title}
-                </h3>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-6 py-2 bg-[#1F232D] text-[#00cddb] font-bold rounded-lg border border-cyan-400 transition duration-300 hover:shadow-[0_0_15px_#00cddb]"
-                >
-                  Live Demo
-                </a>
+              {/* Image */}
+              <div className="w-full lg:w-1/2">
+                <img
+                  src={project.img}
+                  alt={project.title}
+                  className="w-full h-56 sm:h-64 md:h-80 lg:h-full object-cover brightness-90 hover:brightness-100 transition duration-300"
+                />
               </div>
-            </motion.div>
+
+              {/* Content */}
+              <div className="p-6 sm:p-8 lg:w-1/2 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-[#ccc] mb-6 leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-3 sm:gap-4 mt-auto">
+                  <a
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-2 sm:px-6 sm:py-2 bg-[#00EEFF] text-black font-bold rounded-lg transition hover:brightness-90"
+                  >
+                    Live Demo
+                  </a>
+                  <a
+                    href={project.sourceCode}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-2 sm:px-6 sm:py-2 bg-transparent border border-[#00EEFF] text-[#00EEFF] font-bold rounded-lg transition hover:bg-[#00EEFF]/10"
+                  >
+                    Source Code
+                  </a>
+                </div>
+              </div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

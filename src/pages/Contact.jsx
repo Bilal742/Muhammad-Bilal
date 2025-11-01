@@ -1,6 +1,7 @@
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -17,6 +18,18 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validation
+    if (!formData.name || !formData.email || !formData.message) {
+      toast.error("⚠️ Please fill in all fields!");
+      return;
+    }
+
+    if (!formData.email.includes("@")) {
+      toast.error("⚠️ Please enter a valid email address!");
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -30,13 +43,13 @@ export default function Contact() {
       });
 
       if (res.ok) {
-        alert("✅ Message Sent Successfully!");
+        toast.success("✅ Message Sent Successfully!");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        alert("❌ Failed to send message. Try again!");
+        toast.error("❌ Failed to send message. Try again!");
       }
     } catch (err) {
-      alert("⚠️ Something went wrong!");
+      toast.error("⚠️ Something went wrong!");
     }
 
     setLoading(false);
@@ -44,27 +57,18 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-16 text-white">
+      <Toaster position="top-right" reverseOrder={false} />
       <div className="max-w-6xl mx-auto px-6 lg:px-12">
         {/* Heading */}
-        <motion.h2
+        <h2
           className="text-3xl sm:text-4xl font-bold text-center mb-12 uppercase"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
         >
           Contact <span className="text-[#00EEFF]">Me</span>
-        </motion.h2>
+        </h2>
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Left Side - Info */}
-          <motion.div
-            className="space-y-6"
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div className="space-y-6">
             <h3 className="text-2xl font-semibold mb-4">Get in Touch</h3>
             <p className="text-gray-300 leading-7">
               Feel free to reach out to me for any project collaboration, web
@@ -85,16 +89,10 @@ export default function Contact() {
               <FaMapMarkerAlt className="text-[#00EEFF] text-xl" />
               <span className="text-gray-300">Karachi, Pakistan</span>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right Side - Form */}
-          <motion.div
-            className="p-6 rounded-xl shadow-lg shadow-[#00EEFF]/20"
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div className="p-6 rounded-xl shadow-lg shadow-[#00EEFF]/20">
             <form onSubmit={handleSubmit} className="space-y-4">
               <input
                 type="text"
@@ -102,9 +100,7 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Your Name"
-                className="w-full p-3 rounded-lg border border-gray-700 
-                  text-white focus:outline-none focus:border-[#00EEFF]"
-                required
+                className="w-full p-3 rounded-lg border border-gray-700 text-white focus:outline-none focus:border-[#00EEFF]"
               />
               <input
                 type="email"
@@ -112,9 +108,7 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Your Email"
-                className="w-full p-3 rounded-lg border border-gray-700 
-                  text-white focus:outline-none focus:border-[#00EEFF]"
-                required
+                className="w-full p-3 rounded-lg border border-gray-700 text-white focus:outline-none focus:border-[#00EEFF]"
               />
               <textarea
                 rows="4"
@@ -122,22 +116,20 @@ export default function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 placeholder="Your Message"
-                className="w-full p-3 rounded-lg border border-gray-700 
-                  text-white focus:outline-none focus:border-[#00EEFF]"
-                required
+                className="w-full p-3 rounded-lg border border-gray-700 text-white focus:outline-none focus:border-[#00EEFF]"
               ></textarea>
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 bg-[#00EEFF] text-black font-bold rounded-lg 
-                  hover:bg-[#00cddb] transition duration-300 disabled:opacity-50"
+                className="w-full py-3 bg-[#00EEFF] text-black font-bold rounded-lg hover:bg-[#00cddb] transition duration-300 disabled:opacity-50"
               >
                 {loading ? "Sending..." : "Send Message"}
               </button>
             </form>
-          </motion.div>
+          </div>
         </div>
       </div>
+      <hr className="h-0.5 mx-4 sm:mx-10 md:mx-20 lg:mx-36 mt-10 border-gray-600" />
     </section>
   );
 }
