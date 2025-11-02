@@ -42,7 +42,7 @@ export default function Projects() {
         "This section highlights my practical learning journey through real-world HTML, CSS, and JavaScript projects. Each project strengthens my understanding of responsive layouts and dynamic UI design — every project reflects continuous learning and growth as a web developer.",
       img: bg4,
       liveLink: "https://learning-projectss.netlify.app/",
-      sourceCode: "https://github.com/Bilal742/react-user-management-crud",
+      sourceCode: "https://github.com/Bilal742/Learning-Projects",
     },
   ];
 

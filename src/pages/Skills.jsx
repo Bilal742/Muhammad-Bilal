@@ -29,7 +29,7 @@ export default function Skills() {
       </h2>
 
       {/* Grid Centered */}
-      <div className="max-w-5xl mx-auto grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 gap-6">
+      <div className="max-w-3xl mx-auto grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 gap-6">
         {tech.map((item, index) => (
           <div
             key={index}
