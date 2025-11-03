@@ -1,4 +1,4 @@
-import img4 from "../assets/img4.png";
+import img4 from "../assets/Img4.png";
 import { Typewriter } from "react-simple-typewriter";
 import { FaFacebookF, FaLinkedin, FaGithub, FaInstagram, FaFileAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
