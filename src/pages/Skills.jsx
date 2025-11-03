@@ -1,6 +1,6 @@
 import { FaHtml5, FaCss3Alt, FaJs, FaReact } from "react-icons/fa";
 import { SiTailwindcss, SiFirebase, SiMongodb, SiNodedotjs, SiExpress } from "react-icons/si";
-import { motion } from "framer-motion";
+
 
 export default function Skills() {
   const tech = [
@@ -23,7 +23,7 @@ export default function Skills() {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        viewport={{ once: true }}
+        viewport={{ once: true }} 
       >
         My <span className="text-[#00EEFF]">Skills</span>
       </h2>

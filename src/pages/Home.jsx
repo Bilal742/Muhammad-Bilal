@@ -1,4 +1,4 @@
-import Img4 from "../assets/img4.png";
+import img4 from "../assets/img4.png";
 import { Typewriter } from "react-simple-typewriter";
 import { FaFacebookF, FaLinkedin, FaGithub, FaInstagram, FaFileAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -86,7 +86,7 @@ export default function Home() {
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
           <img
-            src={Img4}
+            src={img4}
             alt="background"
             className="w-32 sm:w-52 md:w-96 lg:w-[400px] 
                        h-32 sm:h-52 md:h-96 lg:h-[500px] 
