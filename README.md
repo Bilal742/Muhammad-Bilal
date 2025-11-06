@@ -55,7 +55,7 @@ A simple and direct **contact section** featuring an email form and quick-access
 
 ## 🖼️ Preview
 
-![Preview Image](./preview/protfolio-preview.png.png)
+![Preview Image](./preview/imuhammadbilal.png)
 
 ---
 
