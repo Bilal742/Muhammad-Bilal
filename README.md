@@ -55,7 +55,7 @@ A simple and direct **contact section** featuring an email form and quick-access
 
 ## 🖼️ Preview
 
-![Preview Image](./preview/Villa - Google Chrome 11_6_2025 8_49_11 AM.png)
+![Preview Image](./preview/villa-preview.png.png)
 
 ---
 
