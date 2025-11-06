@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 pt-6 pb-6 transition-all duration-700 ${
-        scrolled ? "shadow-md bg-[#1F232D]" : ""
+        scrolled ? "shadow-md bg-[#181E2C]" : ""
       }`}
     >
       <div className="px-6 md:px-24 container mx-auto flex flex-wrap items-center justify-between">

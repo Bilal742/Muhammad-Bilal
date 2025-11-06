@@ -9,6 +9,8 @@ import Contact from "./pages/Contact";
 import Footer from "./pages/Footer";
 import Loader from "./components/Loader/Loader";
 import "./App.css";
+// import ParticlesBackground from "./components/ParticlesBackground";
+import AnimatedBackground from "./components/ParticlesBackground";
 
 
 export default function App() {
@@ -20,7 +22,7 @@ export default function App() {
         <Loader setLoading={setLoading} />
       ) : (
         <Router>
-          <div className="min-h-screen bg-[#1F232D] text-[#00EEFF]">
+          <div className="min-h-screen text-[#00EEFF] bg-animated">
             <section id="navbar"><Navbar /></section>
             <section id="home"><Home /></section>
             <section id="about"><About /></section>

@@ -13,7 +13,7 @@ export default function Projects() {
       description:
         "A responsive website for Smart Power Solution built using HTML, CSS, JavaScript, and Tailwind CSS with smooth animations.",
       img: bg,
-      liveLink: "https://smart-power-solution.netlify.app/",
+      liveLink: "https://smart-power-solution.vercel.app/",
       sourceCode:
         "https://github.com/Bilal742/Smart-Power-Solution-SPS-website",
     },
@@ -23,7 +23,7 @@ export default function Projects() {
       description:
         "A modern and fully responsive Villa Booking website built with React, Tailwind CSS, and JavaScript — allowing users to explore, view details, and seamlessly book luxury villas.",
       img: bg2,
-      liveLink: "https://luxurymansions.netlify.app/",
+      liveLink: "https://villa-website-v.vercel.app/",
       sourceCode: "https://github.com/Bilal742/Villa-Website",
     },
     {
@@ -32,7 +32,7 @@ export default function Projects() {
       description:
         "A fully functional React User Management CRUD Application built using React.js and Axios with live API integration from MockAPI.io. Users can create, read, update, and delete records dynamically. The app uses Material UI (MUI) for a clean and responsive interface and React Router for page navigation.",
       img: bg3,
-      liveLink: "https://user-managments.netlify.app/",
+      liveLink: "https://react-user-management-crud.vercel.app/",
       sourceCode: "https://github.com/Bilal742/react-user-management-crud",
     },
     {
@@ -41,13 +41,13 @@ export default function Projects() {
       description:
         "This section highlights my practical learning journey through real-world HTML, CSS, and JavaScript projects. Each project strengthens my understanding of responsive layouts and dynamic UI design — every project reflects continuous learning and growth as a web developer.",
       img: bg4,
-      liveLink: "https://learning-projectss.netlify.app/",
+      liveLink: "https://ilearning-projects.vercel.app/",
       sourceCode: "https://github.com/Bilal742/Learning-Projects",
     },
   ];
 
   return (
-    <section id="projects" className="py-16 text-white bg-[#1F232D]">
+    <section id="projects" className="py-16 text-white ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Heading */}
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 uppercase">
@@ -62,7 +62,7 @@ export default function Projects() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: index * 0.2 }}
-              className={`flex flex-col lg:flex-row items-center bg-[#1F232D] rounded-xl overflow-hidden shadow-lg shadow-[#00EEFF]/20 hover:shadow-[#00EEFF]/40 transition-all duration-300 ${
+              className={`flex flex-col lg:flex-row items-center bg-transparent rounded-xl overflow-hidden shadow-lg shadow-[#00EEFF]/20 hover:shadow-[#00EEFF]/40 transition-all duration-300 ${
                 index % 2 !== 0 ? "lg:flex-row-reverse" : ""
               }`}
             >
