@@ -69,7 +69,7 @@ export default function Home() {
           {/* Download CV Button */}
           <div className="mt-10">
             <a
-              href="/Resume-Muhammad-Bilal.pdf"
+              href="/Muhammad-Bilal-Resume.pdf"
               download
               className="mt-4 w-[180px] p-3 bg-[#00EEFF] text-black font-bold rounded-lg shadow-lg hover:brightness-90 transition transform hover:scale-105 flex items-center gap-2 justify-center"
             >
@@ -79,7 +79,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Image with Smooth Transition */}https://github.com/Bilal742/Muhammad-Bilal.git
+        {/* Image with Smooth Transition */}
         <div
           className="flex justify-center md:justify-end md:w-1/2"
           initial={{ opacity: 0, scale: 0.9 }}
