@@ -65,6 +65,19 @@ A simple and direct **contact section** featuring an email form and quick-access
 
 ---
 
+## ⚙️ Setup Instructions
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/Bilal742/Muhammad-Bilal.git
+2. **Install Dependencies:**
+   ```bash
+   npm install
+3. **Run Locally:**
+   ```bash
+   npm run dev
+---
+
 ## 📬 Contact
 
 👨‍💻 **Muhammad Bilal**  
