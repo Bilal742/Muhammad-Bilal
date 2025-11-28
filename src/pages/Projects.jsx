@@ -4,18 +4,20 @@ import bg from "../assets/bg1.jpg";
 import bg2 from "../assets/bg2.png";
 import bg3 from "../assets/bg3.png";
 import bg4 from "../assets/bg4.png";
+import bg5 from "../assets/bg5.png";
+
 
 export default function Projects() {
   const allProjects = [
     {
       id: 1,
-      title: "Smart Power Solution",
+      title: "E-Commerce App",
       description:
-        "A responsive website for Smart Power Solution built using HTML, CSS, JavaScript, and Tailwind CSS with smooth animations.",
-      img: bg,
-      liveLink: "https://smart-power-solution.vercel.app/",
+        "A modern and responsive e-commerce application built with Next.js, React, Tailwind CSS, featuring a clean UI and fast shopping experience — specially designed for premium hoodies",
+      img: bg5,
+      liveLink: "https://hood-anixx.vercel.app/",
       sourceCode:
-        "https://github.com/Bilal742/Smart-Power-Solution-SPS-website",
+        "https://github.com/Bilal742/HoodAnix",
     },
     {
       id: 2,
@@ -39,11 +41,21 @@ export default function Projects() {
       id: 4,
       title: "Learning Projects",
       description:
-        "This section highlights my practical learning journey through real-world HTML, CSS, and JavaScript projects. Each project strengthens my understanding of responsive layouts and dynamic UI design — every project reflects continuous learning and growth as a web developer.",
+        "My personal portfolio with three fully functional React applications To-Do App, Quiz App, and Weather App. All apps are built with React.js, styled using Tailwind CSS, and integrated with React Router for smooth navigation. The design is fully responsive and modern.",
       img: bg4,
       liveLink: "https://ilearning-projects.vercel.app/",
       sourceCode: "https://github.com/Bilal742/Learning-Projects",
     },
+     {
+      id: 5,
+      title: "Smart Power Solution",
+      description:
+        "A responsive website for Smart Power Solution built using HTML, CSS, JavaScript, and Tailwind CSS with smooth animations.",
+      img: bg,
+      liveLink: "https://smart-power-solution.vercel.app/",
+      sourceCode:
+        "https://github.com/Bilal742/Smart-Power-Solution-SPS-website",
+    }
   ];
 
   return (
