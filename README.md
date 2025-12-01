@@ -10,7 +10,7 @@ The main goal of this portfolio is to **present my professional identity online*
 It’s not just a portfolio — it’s a reflection of my growth and creativity as a developer.   
 
 ---  
-
+ 
 ## 🖥️ Sections Included
 
 ### 🏠 Home  
