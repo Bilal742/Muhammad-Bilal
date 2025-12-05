@@ -8,7 +8,7 @@ This website highlights my skills, creative projects, and coding passion — wra
 ## 🎯 Purpose   
 The main goal of this portfolio is to **present my professional identity online** — displaying all of my work, technical expertise, and achievements in one elegant and interactive interface.  
 It’s not just a portfolio — it’s a reflection of my growth and creativity as a developer.    
-
+ 
 ---  
  
 ## 🖥️ Sections Included
