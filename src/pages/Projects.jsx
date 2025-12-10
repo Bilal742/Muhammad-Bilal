@@ -5,12 +5,50 @@ import bg2 from "../assets/bg2.png";
 import bg3 from "../assets/bg3.png";
 import bg4 from "../assets/bg4.png";
 import bg5 from "../assets/bg5.png";
+import bg6 from "../assets/bg6.png";
 
 
 export default function Projects() {
   const allProjects = [
     {
       id: 1,
+      title: "Learning Projects",
+      description:
+        "My personal portfolio with three fully functional React applications To-Do App, Quiz App, and Weather App. All apps are built with React.js, styled using Tailwind CSS, and integrated with React Router for smooth navigation. The design is fully responsive and modern.",
+      img: bg4,
+      liveLink: "https://ilearning-projects.vercel.app/",
+      sourceCode: "https://github.com/Bilal742/Learning-Projects",
+    },
+    {
+      id: 2,
+      title: "React User Management CRUD",
+      description:
+        "A fully functional React User Management CRUD Application built using React.js and Axios with live API integration from MockAPI.io. Users can create, read, update, and delete records dynamically. The app uses Material UI (MUI) for a clean and responsive interface and React Router for page navigation.",
+      img: bg3,
+      liveLink: "https://react-user-management-crud.vercel.app/",
+      sourceCode: "https://github.com/Bilal742/react-user-management-crud",
+    },
+    {
+     id: 3,
+     title: "Smart Power Solution",
+     description:
+       "A responsive website for Smart Power Solution built using HTML, CSS, JavaScript, and Tailwind CSS with smooth animations.",
+     img: bg,
+     liveLink: "https://smart-power-solution.vercel.app/",
+     sourceCode:
+       "https://github.com/Bilal742/Smart-Power-Solution-SPS-website",
+   },
+   {
+     id: 4,
+     title: "Villa-Website",
+     description:
+       "A modern and fully responsive Villa Booking website built with React, Tailwind CSS, and JavaScript — allowing users to explore, view details, and seamlessly book luxury villas.",
+     img: bg2,
+     liveLink: "https://ivilla.vercel.app/",
+     sourceCode: "https://github.com/Bilal742/Villa-Website",
+   },
+    {
+      id: 5,
       title: "E-Commerce App",
       description:
         "A modern and responsive e-commerce application built with Next.js, React, Tailwind CSS, featuring a clean UI and fast shopping experience — specially designed for premium hoodies",
@@ -20,42 +58,15 @@ export default function Projects() {
         "https://github.com/Bilal742/HoodAnix",
     },
     {
-      id: 2,
-      title: "Villa-Website",
+      id: 6,
+      title: "Amna's Mehndi Studio – Official Website",
       description:
-        "A modern and fully responsive Villa Booking website built with React, Tailwind CSS, and JavaScript — allowing users to explore, view details, and seamlessly book luxury villas.",
-      img: bg2,
-      liveLink: "https://ivilla.vercel.app/",
-      sourceCode: "https://github.com/Bilal742/Villa-Website",
-    },
-    {
-      id: 3,
-      title: "React User Management CRUD",
-      description:
-        "A fully functional React User Management CRUD Application built using React.js and Axios with live API integration from MockAPI.io. Users can create, read, update, and delete records dynamically. The app uses Material UI (MUI) for a clean and responsive interface and React Router for page navigation.",
-      img: bg3,
-      liveLink: "https://react-user-management-crud.vercel.app/",
-      sourceCode: "https://github.com/Bilal742/react-user-management-crud",
-    },
-    {
-      id: 4,
-      title: "Learning Projects",
-      description:
-        "My personal portfolio with three fully functional React applications To-Do App, Quiz App, and Weather App. All apps are built with React.js, styled using Tailwind CSS, and integrated with React Router for smooth navigation. The design is fully responsive and modern.",
-      img: bg4,
-      liveLink: "https://ilearning-projects.vercel.app/",
-      sourceCode: "https://github.com/Bilal742/Learning-Projects",
-    },
-     {
-      id: 5,
-      title: "Smart Power Solution",
-      description:
-        "A responsive website for Smart Power Solution built using HTML, CSS, JavaScript, and Tailwind CSS with smooth animations.",
-      img: bg,
-      liveLink: "https://smart-power-solution.vercel.app/",
+        "Welcome to Amna's Mehndi Studio – a professional mehndi (amna's) services website built with Next.js, offering a modern UI, smooth animations, and an elegant user experience.",
+      img: bg6,
+      liveLink: "https://amna-s-mehndi-studio.vercel.app/",
       sourceCode:
-        "https://github.com/Bilal742/Smart-Power-Solution-SPS-website",
-    }
+        "https://github.com/Bilal742/Amna-s-Mehndi-Studio",
+    },
   ];
 
   return (
