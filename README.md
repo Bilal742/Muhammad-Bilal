@@ -1,89 +1,93 @@
-# 🌐 Personal Portfolio Website
-   
-Welcome to my **Personal Portfolio Website**, designed and developed to showcase my journey as a **Front-End Developer**.  
-This website highlights my skills, creative projects, and coding passion — wrapped in a modern, animated, and responsive design. 💻⚡ 
- 
---- 
-    
-## 🎯 Purpose   
-The main goal of this portfolio is to **present my professional identity online** — displaying all of my work, technical expertise, and achievements in one elegant and interactive interface.  
-It’s not just a portfolio — it’s a reflection of my growth and creativity as a developer.      
-   
----    
- 
-## 🖥️ Sections Included
- 
-### 🏠 Home  
-A modern **hero section** with smooth animations, introduction text, and an engaging call-to-action.
-  
-### 💡 About  
-A short but meaningful overview of who I am, my goals, and my journey in front-end development.
+# 🌐 Muhammad Bilal – Personal Portfolio
 
-### 🧠 Skills  
-A visually appealing showcase of my technical stack including:  
-**HTML**, **CSS**, **JavaScript**, **React**, **Tailwind CSS**, **Firebase**, and more.
+![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js&style=for-the-badge)
+![React](https://img.shields.io/badge/React-18-blue?logo=react&style=for-the-badge) 
+![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.4-blue?logo=tailwind-css&style=for-the-badge)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.2-blue?logo=typescript&style=for-the-badge) 
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?logo=javascript&style=for-the-badge) 
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-### 📂 Projects  
-A dedicated section to highlight my **top real-world projects**, each with live demo and source code links.
-
-### 📞 Contact  
-A simple and direct **contact section** featuring an email form and quick-access social links.
+Welcome to my **Personal Portfolio**, built with **Next.js + TypeScript**, showcasing my journey as a **Front-End Developer**.  
+This website highlights my **skills, projects, and coding expertise**, all wrapped in a **modern, animated, and fully responsive design**. 💻✨
 
 ---
 
-## 🛠️ Technologies Used
+## 🌐 Live Demo
+ 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-View%20Now-brightgreen?style=for-the-badge&logo=vercel)](https://imuhammad-bilal.vercel.app/)
 
-| Technology | Purpose |
-|-------------|----------|
-| **React.js** ⚛️ | For building the front-end structure and interactivity |
-| **Tailwind CSS** 🎨 | For modern, responsive, and utility-first styling |
-| **Framer Motion** ✨ | For elegant and smooth animations |
-| **Responsive Design** 📱 | To ensure perfect viewing experience across all devices |
+---
+
+## 🎯 Purpose
+
+This portfolio presents my **professional identity online**, demonstrating my expertise, creative projects, and coding journey in one seamless interface.  
+It’s more than a portfolio — it’s a reflection of **my growth as a developer**.
+
+---
+
+## 🖥️ Website Sections
+
+| Section | Description |
+|---------|-------------|
+| 🏠 **Home** | Hero section with animated intro, typewriter effect, and CTA buttons. |
+| 💡 **About** | Overview of my journey, goals, and front-end development story. |
+| 🧠 **Skills** | Technical stack: **HTML, CSS, JavaScript, React, Tailwind CSS, TypeScript, Firebase**, etc. |
+| 📂 **Projects** | Top projects with **live demos** and **source code**. |
+| 📞 **Contact** | Interactive contact form and social links. |
 
 ---
 
 ## ✨ Key Features
 
-- 🌍 Fully **responsive** on all screen sizes  
-- 🎬 **Animated sections** powered by Framer Motion  
-- 🧩 **Dynamic project cards** with hover and transition effects  
-- 🔗 Smooth and intuitive **navigation** with scroll animations  
-- 💡 Modern **UI/UX layout** inspired by top developer portfolios  
-- 🏷️ **SEO-optimized** with proper meta tags and structure  
+- 🌍 Fully **responsive design** across all devices  
+- 🎬 **Smooth animations** with Framer Motion  
+- 🧩 **Dynamic project cards** with hover & transition effects  
+- 🔗 Smooth **navigation** with scroll animations  
+- 💡 Modern **UI/UX layout** inspired by top portfolios  
+- 🏷️ **SEO optimized** with proper meta tags & open graph settings  
+- ⚡ **Fast performance** with Next.js + optimized assets  
 
 ---
 
 ## 🖼️ Preview
 
-![Preview Image](./preview/imuhammadbilal.png)
-
----
-
-## 🚀 Live Demo
-
-🔗 **Live Website:** [https://imuhammadbilal.vercel.app/](https://imuhammadbilal.vercel.app/)
+![Portfolio Screenshot](./preview/imuhammadbilal.png)
 
 ---
 
 ## ⚙️ Setup Instructions
 
 1. **Clone the Repository:**
+   
    ```bash
-   git clone https://github.com/Bilal742/Muhammad-Bilal.git
-2. **Install Dependencies:**
+   https://github.com/Bilal742/Muhammad-Bilal.git
+3. **Install Dependencies:**
+   
    ```bash
    npm install
-3. **Run Locally:**
+   or
+   yarn
+---
+
+3. **Run the Development Server:**
+   
    ```bash
    npm run dev
+   or
+   yarn dev
+
 ---
 
-## 📬 Contact
+4. **Open in Browser:**
+   
+   ```bash
+   Visit http://localhost:3000
 
-👨‍💻 **Muhammad Bilal**  
+---   
+
+## 👨‍💻 Developer
+
+**Muhammad Bilal**  
 📧 [bilalusman1291@gmail.com](mailto:bilalusman1291@gmail.com)  
-🐙 [GitHub Profile](https://github.com/Bilal742)
-
----
-
-⭐ **If you like this project, don’t forget to give it a star on GitHub!**
+🌐 [Portfolio](https://imuhammad-bilal.vercel.app/)  
+🐙 [GitHub](https://github.com/Bilal742)
