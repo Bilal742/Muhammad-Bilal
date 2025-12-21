@@ -8,7 +8,7 @@ export default function AboutComponent() {
       <motion.div
         className="max-w-4xl mx-auto text-center px-6 sm:px-8 lg:px-12"
         initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }} 
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.2 }}
       >

@@ -16,7 +16,7 @@ export default function Footer() {
           <a href="#projects" className="hover:text-white transition">Projects</a>
           <a href="#contact" className="hover:text-white transition">Contact</a>
         </div>
-
+ 
         <div className="flex space-x-5 text-lg">
           <a href="https://github.com/Bilal742" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
             <FaGithub />

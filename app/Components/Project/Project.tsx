@@ -67,7 +67,7 @@ const Projects: React.FC = () => {
       liveLink: "https://amna-s-mehndi-studio.vercel.app/",
       sourceCode: "https://github.com/Bilal742/Amna-s-Mehndi-Studio",
     },
-  ];
+  ]; 
 
   return (
     <section id="projects" className="py-16 text-white">

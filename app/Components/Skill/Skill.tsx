@@ -16,7 +16,7 @@ type TechItem = {
   icon: ReactNode;
   border: string;
 };
-
+ 
 const Skills: React.FC = () => {
   const tech: TechItem[] = [
     { name: "HTML5", icon: <FaHtml5 className="text-orange-500" />, border: "hover:border-orange-500" },

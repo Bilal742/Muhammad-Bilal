@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
         <span className="text-xl md:text-2xl uppercase font-bold tracking-[2px] text-white">
           Muhammad Bilal
         </span>
-
+ 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex lg:ml-auto text-base">
           {links.map((link) => (

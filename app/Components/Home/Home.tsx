@@ -18,7 +18,7 @@ const Home: React.FC = () => {
         {/* LEFT CONTENT */}
         <motion.div
           className="text-center md:text-left md:w-1/2"
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.95 }} 
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >

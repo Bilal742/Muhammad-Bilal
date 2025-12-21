@@ -52,7 +52,7 @@ const Contact: React.FC = () => {
       if (res.ok) {
         toast.success("✅ Message Sent Successfully!");
         setFormData({ name: "", email: "", message: "" });
-      } else {
+      } else { 
         toast.error("❌ Failed to send message. Try again!");
       }
     } catch (err) {
