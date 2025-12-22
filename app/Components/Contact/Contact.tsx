@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import emailjs from "emailjs-com";
 import {
   Mail,
   Phone,
@@ -13,7 +12,7 @@ import {
   Clock,
 } from "lucide-react";
 
-const initialForm = { name: "", email: "", phone: "", message: "" };
+const initialForm = { name: "", email: "", Phone: "", message: "" };
 
 type FormType = typeof initialForm;
 type StatusType = "idle" | "loading" | "success" | "error";
@@ -33,6 +32,8 @@ interface FieldProps {
   error?: string;
   as?: "input" | "textarea";
   rows?: number;
+  type?: string;
+  placeholder?: string;
 }
 
 interface InfoCardProps {
@@ -45,8 +46,7 @@ function validate(values: FormType) {
   const errors: Partial<FormType> = {};
   if (!values.name.trim()) errors.name = "Name is required";
   if (!values.email.trim()) errors.email = "Email is required";
-  else if (!/\S+@\S+\.\S+/.test(values.email)) errors.email = "Email is invalid";
-  if (!values.phone.trim()) errors.phone = "Phone is required";
+  if (!values.Phone.trim()) errors.Phone = "Phone is required";
   if (!values.message.trim()) errors.message = "Message is required";
   return errors;
 }
@@ -54,7 +54,13 @@ function validate(values: FormType) {
 export default function ContactSection() {
   const now = new Date();
   const days = [
-    "Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday",
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
   ];
 
   const [form, setForm] = useState<FormType>(initialForm);
@@ -70,40 +76,14 @@ export default function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     const er = validate(form);
     setErrors(er);
-
     if (Object.keys(er).length) {
       setStatus({ type: "error", msg: "Please fill all fields correctly." });
       return;
     }
-
-    setStatus({ type: "loading", msg: "Sending message..." });
-
-    try {
-   const res = await emailjs.send(
-  "service_8pdhqni",      
-  "template_9lia5t3",   
-  {
-    name: form.name,
-    email: form.email,
-    phone: form.phone,
-    message: form.message,
-  },
-  "JiHighVl8JPVMaY3V"    
-);
-
-      console.log("EmailJS response:", res);
-
-      setStatus({ type: "success", msg: "Message sent successfully!" });
-      setForm(initialForm);
-    } catch (error: any) {
-      console.error("EmailJS error:", error);
-      let msg = "Email failed. Try again.";
-      if (error?.text) msg = error.text;
-      setStatus({ type: "error", msg });
-    }
+    setStatus({ type: "success", msg: "Message sent successfully!" });
+    setForm(initialForm);
   };
 
   return (
@@ -132,38 +112,72 @@ export default function ContactSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
           <div className="lg:col-span-2 space-y-4">
-            <InfoCard icon={<Phone />} title="Phone" content="+92 123 456 7890" />
-            <InfoCard icon={<Mail />} title="Email" content="bilalusman1291@gmail.com" />
-            <InfoCard icon={<MapPin />} title="Location" content="Karachi, Pakistan" />
+            <InfoCard
+              icon={<Phone />}
+              title="Phone"
+              content="+92 123 456 7890"
+            />
+            <InfoCard
+              icon={<Mail />}
+              title="Email"
+              content="bilalusman1291@gmail.com"
+            />
+            <InfoCard
+              icon={<MapPin />}
+              title="Location"
+              content="Karachi, Pakistan"
+            />
             <InfoCard
               icon={<Clock />}
               title="Current Time"
               content={`${days[now.getDay()]} • ${now.toLocaleTimeString()}`}
+            />
+
+            <iframe
+              className="w-full h-56 rounded-xl border border-gray-800"
+              src="https://www.google.com/maps?q=Karachi%20Pakistan&output=embed"
+              loading="lazy"
             />
           </div>
 
           <div className="lg:col-span-3">
             <div className="rounded-2xl border border-gray-800 bg-black/80 p-6 backdrop-blur">
               {status.type !== "idle" && (
-                <div
-                  className={`mb-4 flex items-center gap-2 rounded-xl border p-3 text-sm ${
-                    status.type === "success"
-                      ? "border-green-400 bg-green-900/20"
-                      : "border-red-500 bg-red-900/20"
-                  }`}
-                >
-                  {status.type === "success" ? <CheckCircle2 /> : <AlertCircle />}
+                <div className="mb-4 flex items-center gap-2 rounded-xl border border-[#00EEFF]/40 bg-[#00EEFF]/10 p-3 text-sm">
+                  {status.type === "success" ? (
+                    <CheckCircle2 />
+                  ) : (
+                    <AlertCircle />
+                  )}
                   {status.msg}
                 </div>
               )}
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <Field label="Name" name="name" value={form.name} onChange={handleChange} error={errors.name} />
-                  <Field label="Email" name="email" value={form.email} onChange={handleChange} error={errors.email} />
+                  <Field
+                    label="Name"
+                    name="name"
+                    value={form.name}
+                    onChange={handleChange}
+                    error={errors.name}
+                  />
+                  <Field
+                    label="Email"
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    error={errors.email}
+                  />
                 </div>
 
-                <Field label="Phone" name="phone" value={form.phone} onChange={handleChange} error={errors.phone} />
+                <Field
+                  label="Phone"
+                  name="Phone"
+                  value={form.Phone}
+                  onChange={handleChange}
+                  error={errors.Phone}
+                />
 
                 <Field
                   label="Message"
@@ -177,11 +191,9 @@ export default function ContactSection() {
 
                 <button
                   type="submit"
-                  disabled={status.type === "loading"}
-                  className="w-full rounded-xl bg-[#00EEFF] text-black py-3 font-semibold hover:shadow-[0_0_20px_#00EEFF] transition"
+                  className="cursor-pointer w-full rounded-xl bg-[#00EEFF] text-black py-3 font-semibold hover:shadow-[0_0_20px_#00EEFF] transition"
                 >
-                  <Send className="inline mr-2" />
-                  {status.type === "loading" ? "Sending..." : "Send Message"}
+                  <Send className="inline mr-2" /> Send Message
                 </button>
               </form>
             </div>
@@ -192,7 +204,15 @@ export default function ContactSection() {
   );
 }
 
-function Field({ label, name, value, onChange, error, as = "input", rows = 4 }: FieldProps) {
+function Field({
+  label,
+  name,
+  value,
+  onChange,
+  error,
+  as = "input",
+  rows = 4,
+}: FieldProps) {
   const Tag = as;
   return (
     <div>
