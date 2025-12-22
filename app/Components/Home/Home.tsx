@@ -15,7 +15,6 @@ const Home: React.FC = () => {
     <>
       <div className="bg-black text-white flex flex-col-reverse md:flex-row items-center justify-between px-4 sm:px-10 md:px-20 lg:px-36 font-bold pt-20 md:pt-40 gap-10">
 
-        {/* LEFT CONTENT */}
         <motion.div
           className="text-center md:text-left md:w-1/2"
           initial={{ opacity: 0, scale: 0.95 }} 
@@ -37,7 +36,6 @@ const Home: React.FC = () => {
             </span>
           </h1>
 
-          {/* SOCIAL ICONS */}
           <div className="mt-6 flex items-center justify-center md:justify-start gap-4">
             <a
               href="https://www.facebook.com/your-facebook"
@@ -76,7 +74,6 @@ const Home: React.FC = () => {
             </a>
           </div>
 
-          {/* RESUME BUTTON */}
           <div className="mt-10">
             <a
               href="/Muhammad-Bilal.pdf"
@@ -88,7 +85,6 @@ const Home: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* RIGHT IMAGE */}
         <motion.div
           className="flex justify-center md:justify-end md:w-1/2"
           initial={{ opacity: 0, scale: 0.9 }}
