@@ -63,7 +63,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="pt-16 text-white">
+    <section id="contact" className="py-40 text-white">
       <Toaster position="top-right" reverseOrder={false} />
       <div className="max-w-6xl mx-auto px-1 lg:px-12">
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 uppercase">
