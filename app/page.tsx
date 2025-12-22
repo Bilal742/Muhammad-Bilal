@@ -1,20 +1,21 @@
-import React from 'react'
-import Home from './Components/Home/Home'
-import AboutComponent from './Components/About/About'
-import Skills from './Components/Skill/Skill'
-import Projects from './Components/Project/Project'
-import Contact from './Components/Contact/Contact'
+import React from "react";
+import Home from "./Components/Home/Home";
+import AboutComponent from "./Components/About/About";
+import Skills from "./Components/Skill/Skill";
+import Projects from "./Components/Project/Project";
+import Contact from "./Components/Contact/Contact";
+import Link from "next/link";
 
-const page = () => {
+const Page = () => {
   return (
     <div>
-      <Home />
+      <Home  />
       <AboutComponent />
       <Skills />
-      <Projects />
+      <Projects preview />
       <Contact />
     </div>
-  )
-}
+  );
+};
 
-export default page 
+export default Page;
