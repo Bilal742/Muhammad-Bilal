@@ -51,7 +51,7 @@ It’s more than a portfolio — it’s a reflection of **my growth as a develop
 
 ## 🖼️ Preview
 
-![Portfolio Screenshot](./preview/imuhammadbilal.png)
+![Portfolio Screenshot](./public/capture.png)
 
 ---
 
