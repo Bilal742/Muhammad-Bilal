@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Bilal - Frontend Developer",
+  title: "Muhammad Bilal",
   description: "Portfolio of Muhammad Bilal - React & TypeScript Developer",
   icons: {
     icon: "/logo3.png",
