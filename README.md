@@ -1,13 +1,13 @@
 # 🌐 Muhammad Bilal – Personal Portfolio
-
+ 
 ![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js&style=for-the-badge)
-![React](https://img.shields.io/badge/React-18-blue?logo=react&style=for-the-badge)  
-![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.4-blue?logo=tailwind-css&style=for-the-badge)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.2-blue?logo=typescript&style=for-the-badge) 
+![React](https://img.shields.io/badge/React-18-blue?logo=react&style=for-the-badge)   
+![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.4-blue?logo=tailwind-css&style=for-the-badge) 
+![TypeScript](https://img.shields.io/badge/TypeScript-5.2-blue?logo=typescript&style=for-the-badge)  
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?logo=javascript&style=for-the-badge) 
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-
-Welcome to my **Personal Portfolio**, built with **Next.js + TypeScript**, showcasing my journey as a **Front-End Developer**.  
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)      
+ 
+Welcome to my **Personal Portfolio**, built with **Next.js + TypeScript**, showcasing my journey as a **Front-End Developer**.    
 This website highlights my **skills, projects, and coding expertise**, all wrapped in a **modern, animated, and fully responsive design**. 💻✨
 
 ---
@@ -15,7 +15,7 @@ This website highlights my **skills, projects, and coding expertise**, all wrapp
 ## 🌐 Live Demo
  
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-View%20Now-brightgreen?style=for-the-badge&logo=vercel)](https://imuhammad-bilal.vercel.app/)
-
+ 
 ---
 
 ## 🎯 Purpose
