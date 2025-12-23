@@ -76,7 +76,7 @@ const Home: React.FC = () => {
 
           <div className="mt-10">
             <a
-              href="/Muhammad-Bilal.pdf"
+              href="/Muhammad-Bilal.pdf" 
               download
               className="w-[180px] p-3 bg-[#00EEFF] text-black font-bold rounded-lg shadow-lg hover:brightness-90 hover:scale-105 transition flex items-center gap-2 justify-center"
             >
