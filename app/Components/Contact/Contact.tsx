@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useForm, ValidationError } from "@formspree/react";
 import {
   Mail,
   Phone,
@@ -15,7 +16,7 @@ import {
 const initialForm = { name: "", email: "", Phone: "", message: "" };
 
 type FormType = typeof initialForm;
-type StatusType = "idle" | "loading" | "success" | "error";
+type StatusType = "idle" | "success" | "error";
 
 interface Status {
   type: StatusType;
@@ -42,15 +43,6 @@ interface InfoCardProps {
   content: React.ReactNode;
 }
 
-function validate(values: FormType) {
-  const errors: Partial<FormType> = {};
-  if (!values.name.trim()) errors.name = "Name is required";
-  if (!values.email.trim()) errors.email = "Email is required";
-  if (!values.Phone.trim()) errors.Phone = "Phone is required";
-  if (!values.message.trim()) errors.message = "Message is required";
-  return errors;
-}
-
 export default function ContactSection() {
   const now = new Date();
   const days = [
@@ -65,7 +57,9 @@ export default function ContactSection() {
 
   const [form, setForm] = useState<FormType>(initialForm);
   const [errors, setErrors] = useState<Partial<FormType>>({});
-  const [status, setStatus] = useState<Status>({ type: "idle", msg: "" });
+
+  // Formspree hook (replace "YOUR_FORMSPREE_ID" with your actual Formspree ID)
+  const [state, handleSubmitFormspree] = useForm("mlgrzwyr");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -74,16 +68,28 @@ export default function ContactSection() {
     setForm((f) => ({ ...f, [name]: value }));
   };
 
+  const validate = (values: FormType) => {
+    const errors: Partial<FormType> = {};
+    if (!values.name.trim()) errors.name = "Name is required";
+    if (!values.email.trim()) errors.email = "Email is required";
+    if (!values.Phone.trim()) errors.Phone = "Phone is required";
+    if (!values.message.trim()) errors.message = "Message is required";
+    return errors;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     const er = validate(form);
     setErrors(er);
-    if (Object.keys(er).length) {
-      setStatus({ type: "error", msg: "Please fill all fields correctly." });
-      return;
+    if (Object.keys(er).length) return;
+
+    // Formspree submission
+    await handleSubmitFormspree(e);
+
+    if (state.succeeded) {
+      setForm(initialForm);
     }
-    setStatus({ type: "success", msg: "Message sent successfully!" });
-    setForm(initialForm);
   };
 
   return (
@@ -142,14 +148,9 @@ export default function ContactSection() {
 
           <div className="lg:col-span-3">
             <div className="rounded-2xl border border-gray-800 bg-black/80 p-6 backdrop-blur">
-              {status.type !== "idle" && (
+              {state.succeeded && (
                 <div className="mb-4 flex items-center gap-2 rounded-xl border border-[#00EEFF]/40 bg-[#00EEFF]/10 p-3 text-sm">
-                  {status.type === "success" ? (
-                    <CheckCircle2 />
-                  ) : (
-                    <AlertCircle />
-                  )}
-                  {status.msg}
+                  <CheckCircle2 /> Message sent successfully!
                 </div>
               )}
 
@@ -191,6 +192,7 @@ export default function ContactSection() {
 
                 <button
                   type="submit"
+                  disabled={state.submitting}
                   className="cursor-pointer w-full rounded-xl bg-[#00EEFF] text-black py-3 font-semibold hover:shadow-[0_0_20px_#00EEFF] transition"
                 >
                   <Send className="inline mr-2" /> Send Message
