@@ -9,7 +9,7 @@ type ProjectsProps = {
 };
 
 const Projects: React.FC<ProjectsProps> = ({ preview }) => {
-  const projectsToShow = preview ? allProjects.slice(0, 4) : allProjects;
+  const projectsToShow = preview ? allProjects.slice(0, 3) : allProjects;
 
   return (
     <section id="projects" className="py-20 text-white">
