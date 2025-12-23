@@ -2,46 +2,28 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { useForm, ValidationError } from "@formspree/react";
 import {
   Mail,
   Phone,
   MapPin,
   Send,
   CheckCircle2,
-  AlertCircle,
   Clock,
 } from "lucide-react";
 
-const initialForm = { name: "", email: "", Phone: "", message: "" };
+type FormType = {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+};
 
-type FormType = typeof initialForm;
-type StatusType = "idle" | "success" | "error";
-
-interface Status {
-  type: StatusType;
-  msg: string;
-}
-
-interface FieldProps {
-  label: string;
-  name: keyof FormType;
-  value: string;
-  onChange: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => void;
-  error?: string;
-  as?: "input" | "textarea";
-  rows?: number;
-  type?: string;
-  placeholder?: string;
-}
-
-interface InfoCardProps {
-  icon: React.ReactNode;
-  title: string;
-  content: React.ReactNode;
-}
+const initialForm: FormType = {
+  name: "",
+  email: "",
+  phone: "",
+  message: "",
+};
 
 export default function ContactSection() {
   const now = new Date();
@@ -57,9 +39,8 @@ export default function ContactSection() {
 
   const [form, setForm] = useState<FormType>(initialForm);
   const [errors, setErrors] = useState<Partial<FormType>>({});
-
-  // Formspree hook (replace "YOUR_FORMSPREE_ID" with your actual Formspree ID)
-  const [state, handleSubmitFormspree] = useForm("mlgrzwyr");
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -69,12 +50,12 @@ export default function ContactSection() {
   };
 
   const validate = (values: FormType) => {
-    const errors: Partial<FormType> = {};
-    if (!values.name.trim()) errors.name = "Name is required";
-    if (!values.email.trim()) errors.email = "Email is required";
-    if (!values.Phone.trim()) errors.Phone = "Phone is required";
-    if (!values.message.trim()) errors.message = "Message is required";
-    return errors;
+    const er: Partial<FormType> = {};
+    if (!values.name.trim()) er.name = "Name is required";
+    if (!values.email.trim()) er.email = "Email is required";
+    if (!values.phone.trim()) er.phone = "Phone is required";
+    if (!values.message.trim()) er.message = "Message is required";
+    return er;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -84,21 +65,34 @@ export default function ContactSection() {
     setErrors(er);
     if (Object.keys(er).length) return;
 
-    // Formspree submission
-    await handleSubmitFormspree(e);
+    try {
+      setLoading(true);
+      setSuccess(false);
 
-    if (state.succeeded) {
-      setForm(initialForm);
+      const res = await fetch("https://formspree.io/f/mlgrzwyr", {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (res.ok) {
+        setForm(initialForm);
+        setSuccess(true);
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      alert("Network error. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <section className="relative overflow-hidden bg-black text-white">
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 left-20 h-72 w-72 bg-[#00EEFF]/20 blur-3xl rounded-full" />
-        <div className="absolute bottom-20 right-20 h-72 w-72 bg-[#00EEFF]/10 blur-3xl rounded-full" />
-      </div>
-
       <div className="mx-auto max-w-7xl px-4 py-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -117,12 +111,9 @@ export default function ContactSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
+          {/* INFO */}
           <div className="lg:col-span-2 space-y-4">
-            <InfoCard
-              icon={<Phone />}
-              title="Phone"
-              content="+92 123 456 7890"
-            />
+            <InfoCard icon={<Phone />} title="Phone" content="+92 123 456 7890" />
             <InfoCard
               icon={<Mail />}
               title="Email"
@@ -138,17 +129,12 @@ export default function ContactSection() {
               title="Current Time"
               content={`${days[now.getDay()]} • ${now.toLocaleTimeString()}`}
             />
-
-            <iframe
-              className="w-full h-56 rounded-xl border border-gray-800"
-              src="https://www.google.com/maps?q=Karachi%20Pakistan&output=embed"
-              loading="lazy"
-            />
           </div>
 
+          {/* FORM */}
           <div className="lg:col-span-3">
-            <div className="rounded-2xl border border-gray-800 bg-black/80 p-6 backdrop-blur">
-              {state.succeeded && (
+            <div className="rounded-2xl border border-gray-800 bg-black/80 p-6">
+              {success && (
                 <div className="mb-4 flex items-center gap-2 rounded-xl border border-[#00EEFF]/40 bg-[#00EEFF]/10 p-3 text-sm">
                   <CheckCircle2 /> Message sent successfully!
                 </div>
@@ -174,10 +160,10 @@ export default function ContactSection() {
 
                 <Field
                   label="Phone"
-                  name="Phone"
-                  value={form.Phone}
+                  name="phone"
+                  value={form.phone}
                   onChange={handleChange}
-                  error={errors.Phone}
+                  error={errors.phone}
                 />
 
                 <Field
@@ -192,10 +178,11 @@ export default function ContactSection() {
 
                 <button
                   type="submit"
-                  disabled={state.submitting}
-                  className="cursor-pointer w-full rounded-xl bg-[#00EEFF] text-black py-3 font-semibold hover:shadow-[0_0_20px_#00EEFF] transition"
+                  disabled={loading}
+                  className="w-full rounded-xl bg-[#00EEFF] text-black py-3 font-semibold hover:shadow-[0_0_20px_#00EEFF] transition disabled:opacity-60"
                 >
-                  <Send className="inline mr-2" /> Send Message
+                  <Send className="inline mr-2" />
+                  {loading ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </div>
@@ -214,8 +201,16 @@ function Field({
   error,
   as = "input",
   rows = 4,
-}: FieldProps) {
-  const Tag = as;
+}: {
+  label: string;
+  name: string;
+  value: string;
+  onChange: any;
+  error?: string;
+  as?: "input" | "textarea";
+  rows?: number;
+}) {
+  const Tag: any = as;
   return (
     <div>
       <label className="block text-sm mb-1">{label}</label>
@@ -224,22 +219,44 @@ function Field({
         value={value}
         onChange={onChange}
         rows={as === "textarea" ? rows : undefined}
-        className={`w-full rounded-xl bg-black border px-4 py-3 text-white outline-none focus:ring-2 focus:ring-[#00EEFF]
-        ${error ? "border-red-500" : "border-gray-700"}`}
+        className={`w-full rounded-xl bg-black border px-4 py-3 outline-none
+        ${error ? "border-red-500" : "border-gray-700"}
+        focus:ring-2 focus:ring-[#00EEFF]`}
       />
       {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
     </div>
   );
 }
-
-function InfoCard({ icon, title, content }: InfoCardProps) {
+function InfoCard({
+  icon,
+  title,
+  content,
+  mapSrc,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  content: React.ReactNode;
+  mapSrc?: string;
+}) {
   return (
-    <div className="flex gap-3 items-center rounded-xl border border-gray-800 bg-black/70 p-4">
-      <div className="text-[#00EEFF]">{icon}</div>
-      <div>
-        <p className="font-semibold">{title}</p>
-        <p className="text-gray-400 text-sm">{content}</p>
+    <div className="rounded-xl border border-gray-800 bg-black/70 p-4">
+      <div className="flex gap-3 items-center">
+        <div className="text-[#00EEFF]">{icon}</div>
+        <div>
+          <p className="font-semibold">{title}</p>
+          <p className="text-gray-400 text-sm">{content}</p>
+        </div>
       </div>
+
+      {mapSrc ? (
+        <iframe
+          title="Google Map"
+          className="mt-4 w-full h-56 rounded-lg border border-gray-800"
+          src={mapSrc}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      ) : null}
     </div>
   );
 }
