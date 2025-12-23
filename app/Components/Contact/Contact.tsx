@@ -179,11 +179,16 @@ export default function ContactSection() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full rounded-xl bg-[#00EEFF] text-black py-3 font-semibold hover:shadow-[0_0_20px_#00EEFF] transition disabled:opacity-60"
+                  className={`w-full rounded-xl py-3 font-semibold transition
+                  ${loading
+                      ? "bg-[#00EEFF]/60 text-black cursor-not-allowed"
+                      : "bg-[#00EEFF] text-black hover:shadow-[0_0_20px_#00EEFF] cursor-pointer"
+                    }`}
                 >
                   <Send className="inline mr-2" />
                   {loading ? "Sending..." : "Send Message"}
                 </button>
+
               </form>
             </div>
           </div>
