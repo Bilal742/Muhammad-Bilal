@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, CheckCircle2, Clock } from "lucide-react";
+import Snowfall from "react-snowfall";
 
 type FormType = {
   name: string;
@@ -80,6 +81,7 @@ export default function ContactSection() {
 
   return (
     <section className="relative overflow-hidden bg-black text-white">
+      {/* <Snowfall /> */}
       <div className="mx-auto max-w-7xl px-4 py-24">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-14">
           <h2 className="text-4xl font-extrabold">

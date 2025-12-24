@@ -2,6 +2,7 @@
 
 import { ReactNode } from "react";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact } from "react-icons/fa";
+import Snowfall from "react-snowfall";
 import {
   SiTailwindcss,
   SiMongodb,
@@ -33,6 +34,7 @@ const Skills: React.FC = () => {
 
   return (
     <section className="text-white py-30 px-4 sm:px-10 md:px-20">
+      {/* <Snowfall /> */}
       <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-12 uppercase text-center">
         My <span className="text-[#00EEFF]">Skills</span>
       </h2>

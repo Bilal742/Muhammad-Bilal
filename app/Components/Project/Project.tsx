@@ -3,6 +3,7 @@
 import { allProjects } from "@/app/data/projects";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Snowfall from "react-snowfall";
 
 type ProjectsProps = {
   preview?: boolean; 
@@ -13,6 +14,7 @@ const Projects: React.FC<ProjectsProps> = ({ preview }) => {
 
   return (
     <section id="projects" className="py-20 text-white">
+       {/* <Snowfall /> */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 uppercase">
           My <span className="text-[#00EEFF]">Projects</span>

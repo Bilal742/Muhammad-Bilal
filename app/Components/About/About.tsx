@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Snowfall from "react-snowfall";
 
 export default function AboutComponent() {
   return (
@@ -8,6 +9,7 @@ export default function AboutComponent() {
       id="about"
       className="relative py-40 text-white bg-black"
     >
+       {/* <Snowfall /> */}
       <motion.div
         className="max-w-4xl mx-auto text-center px-6 sm:px-8 lg:px-12"
         initial={{ opacity: 0, y: 40 }}

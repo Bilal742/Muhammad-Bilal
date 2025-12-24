@@ -1,9 +1,13 @@
+"use client"
+
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import Snowfall from "react-snowfall";
 
 export default function Footer() {
   return (
     <footer className="text-gray-300 pt-20 pb-10">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+       {/* <Snowfall /> */}
 
         <p className="text-sm">
           © {new Date().getFullYear()} Bilal. All rights reserved.

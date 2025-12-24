@@ -9,15 +9,16 @@ import {
   FaFileAlt,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Snowfall from "react-snowfall";
 
 const Home: React.FC = () => {
   return (
     <>
+      <Snowfall />
       <div className="bg-black text-white flex flex-col-reverse md:flex-row items-center justify-between px-4 sm:px-10 md:px-20 lg:px-36 font-bold pt-20 md:pt-40 gap-10">
-
         <motion.div
           className="text-center md:text-left md:w-1/2"
-          initial={{ opacity: 0, scale: 0.95 }} 
+          initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
@@ -76,7 +77,7 @@ const Home: React.FC = () => {
 
           <div className="mt-10">
             <a
-              href="/Muhammad-Bilal.pdf" 
+              href="/Muhammad-Bilal.pdf"
               download
               className="w-[180px] p-3 bg-[#00EEFF] text-black font-bold rounded-lg shadow-lg hover:brightness-90 hover:scale-105 transition flex items-center gap-2 justify-center"
             >
