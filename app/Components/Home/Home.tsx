@@ -48,7 +48,7 @@ const Home: React.FC = () => {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/your-linkedin"
+              href="https://www.linkedin.com/in/muhaammad-bilal/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#00EEFF] text-xl p-3 border-2 border-[#00EEFF] rounded-full hover:scale-110 transition shadow-lg"
