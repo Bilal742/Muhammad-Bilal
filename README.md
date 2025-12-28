@@ -8,7 +8,7 @@
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 Welcome to my **Personal Portfolio**, built with **Next.js + TypeScript**, showcasing my journey as a **Front-End Developer**.     
-This website highlights my **skills, projects, and coding expertise**, all wrapped in a **modern, animated, and fully responsive design**. 💻✨
+This website highlights my **skills, projects, and coding expertise**, all wrapped in a **modern, animated, and fully responsive design**. 💻✨ 
 
 --- 
 
