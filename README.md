@@ -6,7 +6,7 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.2-blue?logo=typescript&style=for-the-badge)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?logo=javascript&style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-
+ 
 Welcome to my **Personal Portfolio**, built with **Next.js + TypeScript**, showcasing my journey as a **Front-End Developer**.     
 This website highlights my **skills, projects, and coding expertise**, all wrapped in a **modern, animated, and fully responsive design**. 💻✨ 
 
