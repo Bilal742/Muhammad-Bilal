@@ -32,12 +32,10 @@ const Navbar: React.FC = () => {
     >
       <div className="px-6 md:px-24 py-6 flex items-center justify-between">
 
-        {/* Logo */}
         <span className="text-xl md:text-2xl uppercase font-bold tracking-[2px] text-white">
           Muhammad Bilal
         </span>
 
-        {/* Desktop Nav */}
         <nav className="hidden lg:flex space-x-10">
           {links.map((link) => (
             <a
@@ -50,7 +48,6 @@ const Navbar: React.FC = () => {
           ))}
         </nav>
 
-        {/* ✅ EXACT UIVERSE HAMBURGER */}
         <label className="hamburger lg:hidden">
           <input
             type="checkbox"
@@ -73,7 +70,6 @@ const Navbar: React.FC = () => {
         </label>
       </div>
 
-      {/* Mobile Menu */}
       <div
         className={`lg:hidden overflow-hidden transition-all duration-700 ease-in-out bg-black
         ${mobileOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
