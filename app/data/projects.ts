@@ -53,8 +53,17 @@ export const allProjects: Project[] = [
       liveLink: "https://smart-power-solution.vercel.app/",
       sourceCode: "https://github.com/Bilal742/Smart-Power-Solution-SPS-website",
     },
+    {
+      id: 6,
+      title: "JavaScript Projects Collection",
+      description:
+        "A curated collection of JavaScript projects showcasing my journey as a front-end developer. Includes mini projects, practice apps, and real-world implementations using pure JavaScript.",
+      img: "/Projects_Img/bg7.PNG",
+      liveLink: "https://java-script-project-s.vercel.app/",
+      sourceCode: "https://github.com/Bilal742/JavaScript-projects",
+    },
   {
-    id: 6,
+    id: 7,
     title: "React User Management CRUD",
     description:
       "A fully functional React User Management CRUD Application built using React.js and Axios with live API integration from MockAPI.io. Users can create, read, update, and delete records dynamically. The app uses Material UI (MUI) for a clean and responsive interface and React Router for page navigation.",
