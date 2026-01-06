@@ -55,7 +55,7 @@ export const allProjects: Project[] = [
     },
     {
       id: 6,
-      title: "JavaScript Projects Collection",
+      title: "My JavaScript Projects",
       description:
         "A curated collection of JavaScript projects showcasing my journey as a front-end developer. Includes mini projects, practice apps, and real-world implementations using pure JavaScript.",
       img: "/Projects_Img/bg7.PNG",
