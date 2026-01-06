@@ -8,19 +8,19 @@ import {
   FaInstagram,
   FaFileAlt,
 } from "react-icons/fa";
-import { motion } from "framer-motion";
-import Snowfall from "react-snowfall";
+// import { motion } from "framer-motion";
+// import Snowfall from "react-snowfall";
 
 const Home: React.FC = () => {
   return (
     <>
-      <Snowfall />
+      {/* <Snowfall /> */}
       <div className="bg-black text-white flex flex-col-reverse md:flex-row items-center justify-between px-4 sm:px-10 md:px-20 lg:px-36 font-bold pt-20 md:pt-40 gap-10">
-        <motion.div
+        <div
           className="text-center md:text-left md:w-1/2"
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          // initial={{ opacity: 0, scale: 0.95 }}
+          // animate={{ opacity: 1, scale: 1 }}
+          // transition={{ duration: 1, ease: "easeOut" }}
         >
           <h1 className="text-1xl sm:text-3xl md:text-4xl lg:text-[45px] leading-snug sm:leading-normal md:leading-tight">
             Hey, I'm Bilal. <br />
@@ -84,13 +84,13 @@ const Home: React.FC = () => {
               <FaFileAlt /> Resume
             </a>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
+        <div
           className="flex justify-center md:justify-end md:w-1/2"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+          // initial={{ opacity: 0, scale: 0.9 }}
+          // animate={{ opacity: 1, scale: 1 }}
+          // transition={{ duration: 1.2, ease: "easeOut" }}
         >
           <img
             src="/Home_Img/Img8.png"
@@ -101,7 +101,7 @@ const Home: React.FC = () => {
                        border-4 border-[#00EEFF]
                        shadow-[0_0_30px_#00EEFF]"
           />
-        </motion.div>
+        </div>
       </div>
 
       <hr className="h-0.5 mx-4 sm:mx-10 md:mx-20 lg:mx-36 mt-10 border-gray-600" />
