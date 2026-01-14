@@ -26,7 +26,7 @@ type Skill = {
   color: string;
   description: string;
   experience: string;
-  projects: number;
+  projects: number | string;
 };
 
 const Skills = () => {
@@ -349,15 +349,15 @@ const Skills = () => {
                 setCurrentIndex(0);
               }}
               className={`flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-300 ${activeCategory === category.id
-                  ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/30"
-                  : "bg-white/5 text-gray-300 hover:bg-white/10 border border-white/10"
+                ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/30"
+                : "bg-white/5 text-gray-300 hover:bg-white/10 border border-white/10"
                 }`}
             >
               <span>{category.icon}</span>
               <span className="font-semibold">{category.name}</span>
               <span className={`px-2 py-1 text-xs rounded-full ${activeCategory === category.id
-                  ? "bg-white/20"
-                  : "bg-black/30"
+                ? "bg-white/20"
+                : "bg-black/30"
                 }`}>
                 {category.count}
               </span>
@@ -516,8 +516,8 @@ const Skills = () => {
                   {/* Skill Card */}
                   <div
                     className={`relative w-full h-full bg-black/80 backdrop-blur-sm border rounded-2xl p-6 flex flex-col items-center justify-center transition-all duration-300 ${index === currentIndex
-                        ? 'border-cyan-500/50 shadow-2xl'
-                        : 'border-white/10'
+                      ? 'border-cyan-500/50 shadow-2xl'
+                      : 'border-white/10'
                       }`}
                     style={{
                       boxShadow: index === currentIndex
