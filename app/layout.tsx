@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
+import Particles from "./Components/Home/Particles";
 // import SnowfallClient from "./Components/Snow/SnowfallClient";
 
 const geistSans = Geist({
@@ -58,9 +59,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-[#00EEFF]`}>
 
-        <Navbar />
-        {children}
-        <Footer />
+        {/* <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"> */}
+          {/* <Particles /> */}
+          <Navbar />
+          {children}
+          <Footer />
+        {/* </div> */}
       </body>
     </html>
   );
