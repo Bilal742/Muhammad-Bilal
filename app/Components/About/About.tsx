@@ -31,7 +31,7 @@ const AboutComponent = () => {
 
   const achievements = [
     { number: "2+", label: "Years Experience", icon: <FaRocket /> },
-    { number: "7", label: "Major Projects", icon: <FaCode /> },
+    { number: "5", label: "Major Projects", icon: <FaCode /> },
     { number: "80+", label: "Mini Projects", icon: <FaPalette /> },
     // { number: "100%", label: "Client Satisfaction", icon: <FaSmile /> },
   ];
