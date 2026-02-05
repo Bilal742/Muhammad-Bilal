@@ -164,7 +164,7 @@ const Home: React.FC = () => {
                 className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[500px] lg:h-[550px] rounded-full overflow-hidden border-8 border-white shadow-xl"
               >
                 <img
-                  src="/Home_Img/bg3.png"
+                  src="/Home_Img/bg4.png"
                   alt="Muhammad Bilal"
                   className="w-full h-full object-cover"
                 />
