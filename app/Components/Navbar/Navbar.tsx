@@ -29,7 +29,6 @@ const Navbar: React.FC = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      // Highlight active section
       const sections = document.querySelectorAll("section[id]");
       const scrollY = window.pageYOffset;
 
@@ -65,33 +64,26 @@ const Navbar: React.FC = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 backdrop-blur-md ${scrolled
-          ? "bg-black/80 shadow-2xl shadow-cyan-500/10"
-          : "bg-transparent"
-        }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled ? "bg-white shadow-md" : "bg-white"
+      }`}
     >
-      <div className="container mx-auto px-14 py-4">
+      <div className="container mx-auto px-6 lg:px-14 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo with animation */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="relative"
           >
-            <Link
-              href="/"
-              className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text "
-            >
+            <Link href="/" className="text-2xl font-bold text-gray-900">
               <span className="flex items-center gap-2">
                 <span>Muhammad</span>
-                <span className="text-xs px-2 py-1 bg-cyan-500/20 rounded-full">
+                <span className="text-xs px-2 py-1 bg-blue-100 text-blue-800 rounded-full">
                   Bilal
                 </span>
               </span>
             </Link>
           </motion.div>
 
-          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
             {links.map((link) => (
               <motion.div
@@ -101,49 +93,47 @@ const Navbar: React.FC = () => {
               >
                 <Link
                   href={link.href}
-                  className={`relative px-4 py-2 rounded-lg font-medium transition-all duration-300 ${activeLink.toLowerCase() === link.name.toLowerCase()
-                      ? "text-cyan-400"
-                      : "text-white/80 hover:text-white"
-                    }`}
+                  className={`relative px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
+                    activeLink.toLowerCase() === link.name.toLowerCase()
+                      ? "text-blue-600"
+                      : "text-gray-700 hover:text-blue-600"
+                  }`}
                   onClick={() => setActiveLink(link.name)}
                 >
                   {link.name}
                   {activeLink.toLowerCase() === link.name.toLowerCase() && (
                     <motion.span
                       layoutId="navbar-indicator"
-                      className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500"
+                      className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600"
                     />
                   )}
                 </Link>
               </motion.div>
             ))}
 
-            {/* CTA Button */}
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               href="/contact"
-              className="ml-4 px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300"
+              className="ml-4 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300 shadow-sm"
             >
               Hire Me
             </motion.a>
           </nav>
 
-          {/* Mobile Menu Button */}
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-lg bg-white/10 backdrop-blur-sm"
+            className="lg:hidden p-2 rounded-lg bg-gray-100 text-gray-700"
           >
             {isOpen ? (
-              <FiX className="text-2xl text-white" />
+              <FiX className="text-2xl" />
             ) : (
-              <FiMenu className="text-2xl text-white" />
+              <FiMenu className="text-2xl" />
             )}
           </motion.button>
         </div>
 
-        {/* Mobile Menu */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -163,26 +153,30 @@ const Navbar: React.FC = () => {
                   >
                     <Link
                       href={link.href}
-                      className={`flex items-center px-4 py-3 rounded-lg font-medium transition-all duration-300 ${activeLink === link.name
-                          ? "bg-cyan-500/20 text-cyan-400"
-                          : "text-white/80 hover:bg-white/10"
-                        }`}
+                      className={`flex items-center px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
+                        activeLink === link.name
+                          ? "bg-blue-50 text-blue-600"
+                          : "text-gray-700 hover:bg-gray-50"
+                      }`}
                       onClick={() => {
                         setActiveLink(link.name);
                         setIsOpen(false);
                       }}
                     >
-                      <span className="w-2 h-2 rounded-full bg-cyan-500 mr-3"></span>
+                      <span className={`w-2 h-2 rounded-full mr-3 ${
+                        activeLink === link.name ? "bg-blue-600" : "bg-gray-400"
+                      }`}></span>
                       {link.name}
                     </Link>
                   </motion.div>
                 ))}
+
                 <motion.a
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: links.length * 0.1 }}
                   href="/contact"
-                  className="block mt-4 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg text-center"
+                  className="block mt-4 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg text-center hover:bg-blue-700"
                   onClick={() => setIsOpen(false)}
                 >
                   Hire Me

@@ -20,12 +20,12 @@ export type Project = {
 export const allProjects: Project[] = [
   {
     id: 1,
-    title: "Learning Projects",
+    title: "ProjectSHub",
     description:
-      "My personal portfolio with three fully functional React applications To-Do App, Quiz App, and Weather App. Built with React.js and Tailwind CSS.",
+      "ProjectShub is a curated collection of web development projects ranging from beginner to advanced levels. Explore a variety of hands-on HTML, CSS, and JavaScript projects designed to help learners practice, build real skills, and enhance their coding journey.",
     img: "/Projects_Img/bg4.png",
-    liveLink: "https://ilearning-projects.vercel.app/",
-    sourceCode: "https://github.com/Bilal742/Learning-Projects",
+    liveLink: "https://projectshubb.vercel.app/",
+    sourceCode: "https://github.com/Bilal742/ProjectsHub",
   },
   {
     id: 2,
@@ -72,13 +72,13 @@ export const allProjects: Project[] = [
   //   liveLink: "Comming soon",
   //   sourceCode: "https://github.com/Bilal742/ProjectsHub",
   // },
-  {
-    id: 7,
-    title: "React User Management CRUD",
-    description:
-      "A complete CRUD app using React, Axios, MockAPI, Material UI, and React Router.",
-    img: "/Projects_Img/bg3.png",
-    liveLink: "https://react-user-management-crud.vercel.app/",
-    sourceCode: "https://github.com/Bilal742/react-user-management-crud",
-  },
+  // {
+  //   id: 7,
+  //   title: "React User Management CRUD",
+  //   description:
+  //     "A complete CRUD app using React, Axios, MockAPI, Material UI, and React Router.",
+  //   img: "/Projects_Img/bg3.png",
+  //   liveLink: "https://react-user-management-crud.vercel.app/",
+  //   sourceCode: "https://github.com/Bilal742/react-user-management-crud",
+  // },
 ];

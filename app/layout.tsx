@@ -17,8 +17,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("http://localhost:3000"),
+
   title: "Muhammad Bilal",
   description: "Portfolio of Muhammad Bilal - React & TypeScript Developer",
+
   icons: {
     icon: "/logo3.png",
     apple: "/apple-touch-icon.png",
@@ -27,6 +30,7 @@ export const metadata: Metadata = {
       { rel: "icon", url: "/favicon-16x16.png", sizes: "16x16" },
     ],
   },
+
   openGraph: {
     title: "Muhammad Bilal - Frontend Developer",
     description: "Portfolio of Muhammad Bilal - React & TypeScript Developer",
@@ -42,6 +46,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Muhammad Bilal - Frontend Developer",
@@ -57,7 +62,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-[#00EEFF]`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#FFFFEB] text-[#000000]`}>
 
         {/* <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"> */}
           {/* <Particles /> */}
