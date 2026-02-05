@@ -45,7 +45,7 @@ export default function ContactSection() {
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) er.email = "Invalid email format";
     if (!values.phone.trim()) er.phone = "Phone is required";
     if (!values.message.trim()) er.message = "Message is required";
-    if (values.message.length < 20) er.message = "Message must be at least 20 characters";
+    if (values.message.length < 10) er.message = "Message must be at least 10 characters";
     return er;
   };
 
