@@ -127,7 +127,7 @@ const Home: React.FC = () => {
               transition={{ delay: 0.7 }}
               className="mt-10 flex flex-wrap gap-4 justify-center lg:justify-start"
             >
-              <motion.a
+              <motion.a 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="/Muhammad-Bilal.pdf"
