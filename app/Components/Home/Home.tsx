@@ -135,7 +135,7 @@ const Home: React.FC = () => {
                 className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300 flex items-center gap-3 shadow-md hover:shadow-lg"
               >
                 <FaFileAlt />
-                Download Resume
+                Download Resume 
               </motion.a>
 
               <motion.a
