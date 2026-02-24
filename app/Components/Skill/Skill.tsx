@@ -182,7 +182,6 @@ const Skills = () => {
   return (
     <section id="skills" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
             Tech Stack
@@ -191,31 +190,6 @@ const Skills = () => {
             Using modern tools and frameworks to create amazing web applications.
           </p>
         </div>
-
-        {/* Categories Filter */}
-        {/* <div className="flex flex-wrap justify-center gap-3 mb-10">
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => setActiveCategory(category.id)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${activeCategory === category.id
-                ? "bg-blue-600 text-white"
-                : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
-                }`}
-            >
-              <span>{category.icon}</span>
-              <span>{category.name}</span>
-              <span className={`px-2 py-0.5 text-xs rounded ${activeCategory === category.id
-                ? "bg-white/20"
-                : "bg-gray-100"
-                }`}>
-                {category.count}
-              </span>
-            </button>
-          ))}
-        </div> */}
-
-        {/* Skills Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
           {filteredSkills.map((skill) => (
             <div
@@ -247,120 +221,7 @@ const Skills = () => {
             </div>
           ))}
         </div>
-
-        {/* Skills Summary */}
-        {/* <div className="bg-white rounded-lg border border-gray-200 p-6 mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div>
-              <div className="text-blue-600 text-2xl font-bold mb-1">
-                {skills.length}
-              </div>
-              <div className="text-gray-600">Technologies</div>
-            </div>
-            <div>
-              <div className="text-blue-600 text-2xl font-bold mb-1">
-                20+
-              </div>
-              <div className="text-gray-600">Projects Completed</div>
-            </div>
-            <div>
-              <div className="text-blue-600 text-2xl font-bold mb-1">
-                95%
-              </div>
-              <div className="text-gray-600">Frontend Mastery</div>
-            </div>
-          </div>
-        </div> */}
       </div>
-
-      {/* Skill Detail Modal */}
-      {/* {selectedSkill && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
-          onClick={handleCloseDetail}
-        >
-          <div
-            className="relative w-full max-w-md bg-white rounded-lg overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div
-              className="p-6"
-              style={{ backgroundColor: `${selectedSkill.color}10` }}
-            >
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <div
-                    className="text-4xl"
-                    style={{ color: selectedSkill.color }}
-                  >
-                    {selectedSkill.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">
-                      {selectedSkill.name}
-                    </h3>
-                    <div className="flex items-center gap-2 mt-1">
-                      <span className="px-2 py-1 bg-gray-100 rounded text-xs">
-                        {selectedSkill.category}
-                      </span>
-                      <span className="text-gray-600 text-sm">
-                        {selectedSkill.experience}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <button
-                  onClick={handleCloseDetail}
-                  className="p-2 hover:bg-gray-100 rounded"
-                >
-                  ×
-                </button>
-              </div>
-            </div>
-
-            <div className="p-6">
-              <div className="mb-6">
-                <h4 className="font-semibold text-gray-900 mb-2">
-                  Description
-                </h4>
-                <p className="text-gray-700">
-                  {selectedSkill.description}
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <div>
-                  <div className="flex justify-between items-center mb-1">
-                    <span className="text-gray-700">Proficiency</span>
-                    <span className="font-bold text-gray-900">{selectedSkill.level}%</span>
-                  </div>
-                  <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                    <div
-                      className="h-full rounded-full"
-                      style={{ width: `${selectedSkill.level}%`, backgroundColor: selectedSkill.color }}
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-gray-50 rounded p-3">
-                    <div className="text-blue-600 font-bold mb-1">
-                      {selectedSkill.projects}
-                    </div>
-                    <div className="text-gray-600 text-sm">Projects</div>
-                  </div>
-                  <div className="bg-gray-50 rounded p-3">
-                    <div className="text-blue-600 font-bold mb-1">
-                      {getSkillLevelText(selectedSkill.level)}
-                    </div>
-                    <div className="text-gray-600 text-sm">Level</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )} */}
     </section>
   );
 };
