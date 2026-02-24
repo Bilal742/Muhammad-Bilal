@@ -1,10 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
+
 import {
   FaHtml5, FaCss3Alt, FaJs, FaReact,
-  FaBolt, FaRocket, FaChartLine
+  FaBolt, FaChartLine
 } from "react-icons/fa";
+
 import {
   SiTailwindcss, SiMongodb, SiNodedotjs,
   SiExpress, SiTypescript, SiNextdotjs,
@@ -151,24 +154,12 @@ const Skills = () => {
     },
   ];
 
-  const categories = [
-    { id: "all", name: "All Skills", icon: <FaBolt />, count: skills.length },
-    { id: "frontend", name: "Frontend", icon: <FaReact />, count: skills.filter(s => s.category === "frontend").length },
-    { id: "backend", name: "Backend", icon: <SiNodedotjs />, count: skills.filter(s => s.category === "backend").length },
-    { id: "tools", name: "Tools", icon: <SiGit />, count: skills.filter(s => s.category === "tools").length },
-    { id: "learning", name: "Learning", icon: <FaChartLine />, count: 0 },
-  ];
-
   const filteredSkills = activeCategory === "all"
     ? skills
     : skills.filter(skill => skill.category === activeCategory);
 
   const handleSkillClick = (skill: Skill) => {
     setSelectedSkill(skill);
-  };
-
-  const handleCloseDetail = () => {
-    setSelectedSkill(null);
   };
 
   const getSkillLevelText = (level: number) => {
@@ -182,18 +173,31 @@ const Skills = () => {
   return (
     <section id="skills" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
             Tech Stack
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Using modern tools and frameworks to create amazing web applications.
           </p>
-        </div>
+        </motion.div>
+
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
-          {filteredSkills.map((skill) => (
-            <div
+          {filteredSkills.map((skill, index) => (
+            <motion.div
               key={skill.id}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05 }}
               onClick={() => handleSkillClick(skill)}
               className="bg-white rounded-lg border border-gray-200 p-4 text-center hover:border-blue-500 cursor-pointer hover:shadow-sm transition-all"
             >
@@ -203,22 +207,29 @@ const Skills = () => {
               >
                 {skill.icon}
               </div>
+
               <h3 className="font-semibold text-gray-900 mb-1">
                 {skill.name}
               </h3>
+
               <div className="text-sm text-gray-600 mb-3">
                 {getSkillLevelText(skill.level)}
               </div>
+
               <div className="h-1 bg-gray-200 rounded-full overflow-hidden">
-                <div
+                <motion.div
+                  initial={{ width: 0 }}
+                  whileInView={{ width: `${skill.level}%` }}
+                  transition={{ duration: 0.8 }}
                   className="h-full rounded-full"
-                  style={{ width: `${skill.level}%`, backgroundColor: skill.color }}
+                  style={{ backgroundColor: skill.color }}
                 />
               </div>
+
               <div className="text-xs text-gray-500 mt-1">
                 {skill.level}%
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
