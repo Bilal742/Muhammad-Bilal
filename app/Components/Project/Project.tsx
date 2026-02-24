@@ -170,15 +170,13 @@ const Projects: React.FC<ProjectsProps> = ({ preview }) => {
         {/* Header Section */}
         <motion.div
           className="text-center mb-12"
-          // variants={headerVariants}
+        // variants={headerVariants}
         >
-          <motion.h1
+          <h1
             className="text-3xl md:text-4xl font-bold text-gray-900 mb-3"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
           >
             My Projects
-          </motion.h1>
+          </h1>
           <motion.p
             className="text-gray-600 max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
