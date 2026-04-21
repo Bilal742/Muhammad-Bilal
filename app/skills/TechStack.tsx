@@ -13,7 +13,7 @@ const techStack = [
     { name: "CSS", icon: "./images/css-icon.svg" },
     // { name: "SCSS", icon: "./images/scss-icon.svg" },
   ];
-
+ 
 const TechStack = () => {
   return (
     <section className="mt-7">
