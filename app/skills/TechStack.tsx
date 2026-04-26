@@ -14,7 +14,7 @@ const techStack = [
     // { name: "SCSS", icon: "./images/scss-icon.svg" },
   ];
  
-const TechStack = () => {
+const TechStack = () => {  
   return (
     <section className="mt-7">
       <h2 className="font-bold text-lg tracking-widest text-white uppercase mb-10">
