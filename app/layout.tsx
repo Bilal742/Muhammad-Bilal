@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "@/app/globals.css"
-// import Navbar from "./Components/Navbar/Navbar";
-// import Footer from "./Components/Footer/Footer";
+import "@/app/globals.css";
+
+import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/Footer/Footer";
 // import Particles from "./Components/Home/Particles";
-// import Header from "./Components/Navbar/Header/header";
-// import SnowfallClient from "./Components/Snow/SnowfallClient";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,7 +18,6 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("http://localhost:3000"),
-
   title: "Bilal (mrvornex)",
   description: "Portfolio of Muhammad Bilal - React & TypeScript Developer",
 
@@ -58,19 +56,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased text-[#000000]`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#FFFFEB] text-[#000000]`}
+      >
+        {/* Optional Background Effects */}
+        {/* <Particles /> */}
 
-        {/* <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"> */}
-          {/* <Particles /> */}
-          {/* <Header /> */}
-          {children}
-          {/* <Footer /> */}
-        {/* </div> */}
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );

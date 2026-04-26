@@ -12,6 +12,12 @@ import WorkExperience from "./Components/About/WorkExperience";
 import Footer from "./Components/Footer/Footer2";
 import Projects from "./projects/Projects";
 
+// import Home from "./Components/Home/Home";
+// import AboutComponent from "./Components/About/About";
+// import Skills from "./Components/Skill/Skill";
+// import Projects from "./Components/Project/Project";
+// import Contact from "./Components/Contact/Contact";
+
 const AnimatedText: React.FC<{ text: string; speed?: number; className?: string }> = ({
   text,
   speed = 50,
@@ -91,6 +97,17 @@ const Page = () => {
         </div>
 
       </>
+      {/* {showWelcome ? (
+        <WelcomeAnimation onComplete={() => setShowWelcome(false)} />
+      ) : ( */}
+        <>
+          {/* <Home /> */}
+          <AboutComponent />
+          <Skills />
+          <Projects  />
+          <Contact />
+        </>
+      {/* )} */}
     </div>
   );
 };

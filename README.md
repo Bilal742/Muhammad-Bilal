@@ -1,6 +1,11 @@
 # 🌐 Muhammad Bilal – Personal Portfolio
+<<<<<<< HEAD
    
 ![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js&style=for-the-badge) 
+=======
+
+![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js&style=for-the-badge)  
+>>>>>>> d87288aa6fb6dcca2aabf3a77a67d5cb3b3833e1
 ![React](https://img.shields.io/badge/React-18-blue?logo=react&style=for-the-badge)
 ![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.4-blue?logo=tailwind-css&style=for-the-badge) 
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.2-blue?logo=typescript&style=for-the-badge)
