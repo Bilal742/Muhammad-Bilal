@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("http://localhost:3000"),
   title: "Bilal (mrvornex)",
-  description: "Portfolio of Muhammad Bilal - React & TypeScript Developer",
+  description: "Portfolio of Bilal",
 
   icons: {
     icon: "/logo3.png",
